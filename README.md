@@ -4,65 +4,76 @@ I am building this repository for study purposes. I am on the journey to become 
 
 <p align="center"> <img src="https://www.dataquest.io/wp-content/uploads/2021/11/why-sql-consumes-so-much-memory-header.webp" alt="SQL" width="50%" height="10%"/> </a> </p>
 
+The Structured Query Language (SQL) was first developed in 1970 by researchers at IBM. The initial version was created to manage and retrieve data from IBM's original relational databases called "System R". A few years later, the SQL language became publicly available. The American National Standards Institute (ANSI) and the International Standard Organization (ISO) then took the SQL language as the standard for communicating with relational databases. While some DBMS (Database Management Systems) have altered the language, the majority still follows the ANSI-approved version of SQL programs.
+
 ## About the Content
 
-The content of this repository cover the essencial SQL commands. I will follow the book "Getting Started with SQL" by Thomas Nield publish by O'REILLY. Besides that, we explore SQL for data analysis.
+The content of this repository covers the essential SQL commands. Some of the material is based on the book ["Getting Started with SQL"](https://www.amazon.com/Getting-Started-SQL-Hands-Beginners/dp/1491938617/ref=sr_1_1?crid=RVXQWN6KCAGY&keywords=getting+started+with+sql&qid=1675856434&sprefix=getting+started+with+sql%2Caps%2C261&sr=8-1) by Thomas Nield, published by O'Reilly. However, the SQL code will always be written using MySQL, one of the many DMBS for relational databases available in the market. In some cases, I will highlight the differences in queries and commands between MySQL, SQL Server, and SQLite. Additionally, we will delve into SQL and some NoSQL databases for data analysis.
 
 Note 1: All of this content is written in the form of "notes" by me. I encourage you to take some time and read the official documentation for the SQL language. I will always provide these references and others at the end of each topic.
 
 Note 2: At the time of viewing this, I may still be in the process of developing the content and updating this repository. As a result, you may encounter some unclickable topics. The updates to these topics do not follow a specific order and are based on my needs and study progress. Follow me to stay updated on new upgrades.
 
+## Prerequisites
+1. Install [MySQL Community Server.](https://dev.mysql.com/downloads/) and the [MySQL Worbench.](https://dev.mysql.com/downloads/workbench/)
+2. Have access and know [how to use terminal/command line.](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands)
+
 ## Basics Commands
 
-#### DQL
+#### DQL (Data Query Language)
 
-- SELECT
+- SELECT: Retrieve data from database.
+
+#### DML (Data Manipulation Language)
+
+- INSERT: Insert data into a table.
+- DELETE: Delete data from a database table.
+- UPDATE: Update an existing data within a table.
+
+#### DDL (Data Definition Language)
+
+- ALTER: Change the structure of the database.
+- CREATE: Create databases or objects, like tables and views.
+- DROP: Delete objects from database.
+
+#### DCL (Data Control Language)
+
+- GRANT: Give privileges access to database. 
+- REVOKE: Withdraws the user's access privileges given by using the GRANT command.
+
+#### TCL (Transaction Control Language) 
+
+- COMMIT: Commits a Transaction. 
+- ROLLBACK: Rollbacks a transaction in case of any error occurs.
+
+## Queries examples
+
+Retrieves all data from table in a database:
 
 ```sql
-  SELECT * FROM database.db 
+    SELECT * FROM table_name;
 ```
 
-#### DML
+Query anatomy:
 
-- INSERT
-- DELETE 
-- UPDATE
-
-#### DDL
-
-- ALTER 
-- CREATE
-- DROP
-
-#### DCL
-
-- GRANT 
-- REVOKE
-
-#### DTL
-
-- BEGIN
-- COMMIT 
-- ROLLBACK
+- `SELECT` keyword retrieve data from a database.
+- `*` symbol is used to select all columns in the table.
+- `FROM` keyword specifies the name of the table from which the data will be retrieved.
+- `table_name` is the name of the table in the database.
 
 
+## Table of Contents
 
-- WHERE 
-- FROM
-- ORDER BY
-- GROUP BY
-- LEFT JOIN
-- RIGHT JOIN
-- OUTER JOIN
-- INNER JOIN
-- AS
-- OR, AND & NOT
-- IN
-- CASE
-- HAVING
-- TRUNCATE
-
-
+1. [Select, Filter, Order and Operationals](content/filter-order-and-others.md)
+2. Handling with Variables
+3. Joining Tables
+4. Aggregating Data for Analysis
+5. Windows Function, Subqueries and Handling with date
+6. Exploratory Data Analysis
+7. Cleaning and Processing Data
+8. Data Analysis
+9. Programming
+10. Optimizing SQL Queries
 
 ## Contact me 🔗 👇 
 
