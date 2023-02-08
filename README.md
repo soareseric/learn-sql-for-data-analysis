@@ -18,7 +18,7 @@ Note 2: At the time of viewing this, I may still be in the process of developing
 1. Install [MySQL Community Server.](https://dev.mysql.com/downloads/) and the [MySQL Worbench.](https://dev.mysql.com/downloads/workbench/)
 2. Have access and know [how to use terminal/command line.](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands)
 
-## Basics Commands
+## Some of the Basics Commands
 
 #### DQL (Data Query Language)
 
@@ -35,6 +35,7 @@ Note 2: At the time of viewing this, I may still be in the process of developing
 - ALTER: Change the structure of the database.
 - CREATE: Create databases or objects, like tables and views.
 - DROP: Delete objects from database.
+- RENAME: This is used to rename an object existing in the database.
 
 #### DCL (Data Control Language)
 
@@ -45,6 +46,7 @@ Note 2: At the time of viewing this, I may still be in the process of developing
 
 - COMMIT: Commits a Transaction. 
 - ROLLBACK: Rollbacks a transaction in case of any error occurs.
+- SAVEPOINT: Sets a save point within a transaction    
 
 ## Queries examples
 
@@ -64,7 +66,7 @@ Query anatomy:
 
 ## Table of Contents
 
-1. [Select, Filter, Order and Operationals](content/filter-order-and-others.md)
+1. Select, Filter, Order and Operationals
 2. Handling with Variables
 3. Joining Tables
 4. Aggregating Data for Analysis
