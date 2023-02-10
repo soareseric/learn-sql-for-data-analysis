@@ -50,19 +50,75 @@ Note 2: At the time of viewing this, I may still be in the process of developing
 
 ## Queries examples
 
-Retrieves all data from table in a database:
+Sample use case: 
+
+You are working for a logistics company that sends emails to customers to inform them about the status of their packages. The company has a database of all the emails sent, which includes the email ID, recipient email address, subject, body, and sending date.
+
+1. Create the database and its tables:
 
 ```sql
-    SELECT * FROM table_name;
+    CREATE DATABASE logistics_email;
+    
+    USE logistics_email;
+    
+    CREATE TABLE emails (
+        email_id INT AUTO_INCREMENT PRIMARY KEY,
+        recipient VARCHAR(255) NOT NULL,
+        subject VARCHAR(255) NOT NULL,
+        body TEXT NOT NULL,
+        sent_date DATE NOT NULL
+     ); 
 ```
 
-Query anatomy:
+2. Insert values to those tables:
 
-- `SELECT` keyword retrieve data from a database.
-- `*` symbol is used to select all columns in the table.
-- `FROM` keyword specifies the name of the table from which the data will be retrieved.
-- `table_name` is the name of the table in the database.
+```sql
+    INSERT INTO emails (recipient, subject, body, sent_date)
+    VALUES
+          ('recipient1@email.com', 'Package Update', 'Your package has been shipped', '2022-01-01'),
+          ('recipient2@email.com', 'Package Delivery', 'Your package has been delivered', '2022-01-02'),
+          ('recipient3@email.com', 'Package Delay', 'Your package has been delayed', '2022-01-03'),
+          ('recipient4@email.com', 'Package Update', 'Your package is on its way', '2022-01-04'),
+          ('recipient5@email.com', 'Package Arrival', 'Your package has arrived', '2022-01-05');
+```
 
+3. Update the email with the subject "Package Delivery" to "Package Delivery Update":
+
+```sql
+    UPDATE emails
+    SET subject = 'Package Delivery Update'
+    WHERE email_id = 2;
+```
+
+4. Add a new column called "status" with "Pending" as its default value:
+
+```sql
+    ALTER TABLE emails
+    ADD COLUMN status VARCHAR(20) NOT NULL DEFAULT 'Pending';
+```
+
+5. Retrieve the number of emails sent to each recipient email address and the average length of the email bodies:
+
+```sql
+    SELECT 
+        recipient,
+        COUNT(email_id) as total_emails,
+        AVG(LENGTH(body)) as avg_body_length
+    FROM emails
+    GROUP BY recipient;
+```
+
+6. Retrieve the number of emails sent to each recipient email address and the average length of the email bodies only for the emails sent in the last week:
+
+```sql
+    SELECT 
+        recipient,
+        COUNT(email_id) as total_emails,
+        AVG(LENGTH(body)) as avg_body_length
+    FROM emails
+    WHERE sent_date >= DATE_SUB(NOW(), INTERVAL 7 DAY)
+    GROUP BY recipient;
+```
 
 ## Table of Contents
 
